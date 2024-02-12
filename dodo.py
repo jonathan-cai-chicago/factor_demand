@@ -20,7 +20,7 @@ def task_pull_CRSP():
     ]
     targets = [
         Path(DATA_DIR) / "pulled" / file for file in [
-            "CRSP_TNA.parquet", "CRSP_style.parquet"
+            "CRSP_fund_combined.parquet",
             ]
     ]
 
@@ -46,7 +46,7 @@ def task_pull_s12():
     ]
     targets = [
         Path(DATA_DIR) / "pulled" / file for file in [
-            "s12.parquet"
+            "s12.parquet",
             ]
     ]
 
@@ -54,6 +54,33 @@ def task_pull_s12():
         "actions": [
             "python ./src/config.py",
             "python ./src/load_s12.py",
+        ],
+        "file_dep": file_dep,
+        "targets": targets,
+        "clean": True,
+        "verbosity": 2,
+    }
+
+
+def task_mflink():
+    """
+    Pull Linking data from WRDS
+    """
+    file_dep = [
+        "./src/config.py",
+        "./src/load_mflink.py",
+    ]
+    targets = [
+        Path(DATA_DIR) / "pulled" / file for file in [
+            "mflink1.parquet",
+            "mflink2.parquet",
+            ]
+    ]
+
+    return {
+        "actions": [
+            "python ./src/config.py",
+            "python ./src/load_mflink.py",
         ],
         "file_dep": file_dep,
         "targets": targets,
