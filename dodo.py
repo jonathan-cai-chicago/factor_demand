@@ -34,3 +34,29 @@ def task_pull_CRSP():
         "clean": True,
         "verbosity": 2,
     }
+
+
+def task_pull_s12():
+    """
+    Pull s12 mutual fund data from WRDS
+    """
+    file_dep = [
+        "./src/config.py",
+        "./src/load_s12.py",
+    ]
+    targets = [
+        Path(DATA_DIR) / "pulled" / file for file in [
+            "s12.parquet"
+            ]
+    ]
+
+    return {
+        "actions": [
+            "python ./src/config.py",
+            "python ./src/load_s12.py",
+        ],
+        "file_dep": file_dep,
+        "targets": targets,
+        "clean": True,
+        "verbosity": 2,
+    }
