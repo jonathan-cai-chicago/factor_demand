@@ -46,19 +46,20 @@ def pull_s12(
     rdate,
     assets,
     stkcdesc,
+    CASE WHEN country = 'UNITED STATES' THEN 1 ELSE 0 END AS us,
     SUM(shares * prc / 1000.0) AS useq_tna_k
     FROM
     tfn.s12
     WHERE 
         fdate >= '{start_date}' and fdate <= '{end_date}' AND
         prc > 0 AND shares > 0
-        AND country = 'UNITED STATES' 
     GROUP BY
     fdate,
     fundno,
     rdate,
     assets,
-    stkcdesc
+    stkcdesc,
+    us
     """
 
     db = wrds.Connection(wrds_username=wrds_username)
