@@ -41,10 +41,9 @@ def pull_CRSP_combined_file(
     - df: pd.DataFrame, CRSP mutual fund TNA and style data
     """
     # Connect to WRDS
-    db = wrds.Connection(wrds_username=wrds_username)
     query = f"""
     SELECT 
-        a.*, b.lipper_asset_cd, b.lipper_class_name, b.policy
+        a.*, b.lipper_asset_cd, b.lipper_class_name, b.crsp_obj_cd
     FROM 
         crsp.monthly_tna_ret_nav a
     LEFT JOIN 
@@ -53,12 +52,14 @@ def pull_CRSP_combined_file(
         a.crsp_fundno = b.crsp_fundno
     WHERE 
         a.caldt BETWEEN '{start_date}' AND '{end_date}' AND
+        SUBSTRING(b.crsp_obj_cd, 1, 2) = 'ED' AND
         a.caldt BETWEEN b.begdt AND b.enddt;
     """
-    db = wrds.Connection(wrds_username=wrds_username)
-    df = db.raw_sql(query, date_cols=["caldt"])
-    db.close()
+    with wrds.Connection(wrds_username=wrds_username) as db:
+        df = db.raw_sql(query, date_cols=["caldt"])
 
+    # filter on Equity Domestic funds
+    # df = df[df.crsp_obj_cd.str[:2] == "ED"]
     return df
 
 
