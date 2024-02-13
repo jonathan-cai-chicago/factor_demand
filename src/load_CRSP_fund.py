@@ -58,8 +58,6 @@ def pull_CRSP_combined_file(
     with wrds.Connection(wrds_username=wrds_username) as db:
         df = db.raw_sql(query, date_cols=["caldt"])
 
-    # filter on Equity Domestic funds
-    # df = df[df.crsp_obj_cd.str[:2] == "ED"]
     return df
 
 
