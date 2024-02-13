@@ -51,7 +51,7 @@ def pull_mflink2(
     # Connect to WRDS
     query = "SELECT * from mfl.mflink2"
     db = wrds.Connection(wrds_username=wrds_username)
-    df = db.raw_sql(query)
+    df = db.raw_sql(query, date_cols=['fdate'])
     db.close()
     return df
 
