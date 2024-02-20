@@ -3,7 +3,19 @@ Project Title HERE
 
 # About this project
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+- This is the final project for FINM 32900, Winter 2024, Group 1. 
+- We try to replicate the first two tables for this paper: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3327849
+
+# Individual Contributions
+## Jonathan Cai
+- Set up the blank project template. 
+- Set up `dodo.py` for automatic pipeline execution. 
+- Conduct research on what data to pull from WRDS. 
+- Design SQL queries to query the necessary data from WRDS. 
+- Deep dive to identify the correct filters used in the paper, such as how to correctly identify "domestic equity" mutual funds. 
+- Attempt to replicate table 1 of the paper by applying all filters mentioned in the paper. 
+- Write Jupyter notebooks to explain the raw data and replication attempts.
+
 
 # Quick Start
 
