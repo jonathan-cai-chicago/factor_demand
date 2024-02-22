@@ -6,6 +6,12 @@ Replication for Factor Demand
 - This is the final project for FINM 32900, Winter 2024, Group 1. 
 - We try to replicate the first two tables for this paper: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3327849
 
+# Relevant Scripts and Reports
+- `src/load_CRSP_fund.py`: load raw CRSP mutual fund data. (Jonathan) 
+- `src/load_s12.py`: load S12 mutual fund holdings data. (Jonathan)
+- `src/load_mflink.py`: load MFLINK data for merging CRSP and S12 data. (Jonathan)
+- `src/02_raw_data_walkthrough.ipynb`: demonstrate how to process the raw data into tidy format and replicate Table 1. (Jonathan)
+
 # Individual Contributions
 ## Jonathan Cai
 - Set up the blank project template. 
