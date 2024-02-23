@@ -187,45 +187,21 @@ temp
 # - Unlike `mflink1`, the mapping for s12 to wficn has date information. 
 # - If I simply use the tuple of (fdate, fundno) to merge, there will be a lot of missing matches. 
 # - To circumvent this issue, I decided to **obtain the last valid record of wficn for each (year, fundno)**. 
-
-# In[ ]:
-
-
-df_mflink2.head()
-
-
-# In[ ]:
-
-
-df_mflink2["year"] = df_mflink2["fdate"].dt.year.astype("int")
-eoy_link2 = (
-    df_mflink2[df_mflink2.wficn.notnull()]
-    .sort_values("fdate")
-    .groupby(["fundno", "year"])["wficn"]
-    .last()
-    .reset_index()
-)
-eoy_link2['wficn'] = eoy_link2['wficn'].astype('int')
-
-
+# - During our meeting with Jeremy, he suggested we use `merge_asof` instead, which makes more sense. 
 # - We observe a huge reduction in sample size after the merge, probably because s12 contain a lot of **non domestic funds** which are not covered WRDS's MFLINK
 
 # In[ ]:
 
 
-# merge with s12 data
+print(f"Before merge: {df_s12.shape[0]}")
 df_s12["year"] = df_s12["fdate"].dt.year.astype("int")
-print(f"Before merging, df_s12 has {df_s12.shape[0]} rows")
-df_s12 = df_s12.merge(eoy_link2, how="inner", on=["fundno", "year"]).reset_index(
-    drop=True
-)
-print(f"After merging, df_s12 has {df_s12.shape[0]} rows")
-
-
-# In[ ]:
-
-
-df_s12.head()
+df_s12 = df_s12.sort_values(["fdate", "fundno"])
+df_mflink2 = df_mflink2.sort_values(["fdate", "fundno"])
+df_s12['fundno'] = df_s12['fundno'].astype('int')
+df_mflink2['fundno'] = df_mflink2['fundno'].astype('int')
+df_s12 = pd.merge_asof(df_s12, df_mflink2[['fdate', 'fundno', 'wficn']], by='fundno', on='fdate', direction='nearest')
+df_s12 = df_s12[df_s12['wficn'].notnull()]
+print(f"After merge: {df_s12.shape[0]}")
 
 
 # ## Domestic Equity?
