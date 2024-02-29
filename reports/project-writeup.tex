@@ -1,0 +1,57 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{indentfirst}
+
+\title{Final Project}
+\author{Jonathan Cai, Keyi Chen, Adam Aldad, and Jean-Sébastien Gaultier}
+
+\begin{document}
+\maketitle
+ 
+\section{Introduction}
+
+In our final project, we replicated the first two tables of "Factor Demand and Factor Returns" by Cameron Peng and Chen Wang found \href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3327849}{here}. The paper covers the persistence of factor demand and reveals the prevalence of factor rebalancing; We focus on the paper's discussion of factor demands. Table 1 summarizes a sample of US domestic equity mutual funds from 1980 to 2019, and table 2 summarizes the distribution of factor betas for mutual funds. 
+
+\section{Replicating Table 1}
+
+\subsection{Retrieving the Data}
+
+We pulled our data from WRDS' Monthly Total Net Assets, Returns, and Net Asset Values table found \href{https://wrds-www.wharton.upenn.edu/data-dictionary/crsp_q_mutualfunds/monthly_tna_ret_nav/}{here}. The paper only uses US domestic equity mutual funds in their analysis. Accordingly, we pulled data from WRDS' \href{https://wrds-www.wharton.upenn.edu/data-dictionary/crsp_q_mutualfunds/fund_style/}{Style attributes for each fund} table in order to filter the data. Our quarterly fund holdings data was pulled from the \href{https://wrds-www.wharton.upenn.edu/data-dictionary/tr_mutualfunds/s12/}{Thomson-Reuters Mutual Fund Holdings (s12)} dataset
+
+\subsection{Cleaning the Data}
+
+We found this part of the replication process challenging - first, finding an optimal way to filter the data to only "US domestic equity" took various trials and errors. However, we discovered the \textbf{crsp\_obj\_cd} column of the \textbf{crsp.fund\_style} table to be the best way to achieve this filter. Furthermore, when using the fund-level identifier \textbf{wficn}, we discovered a handful of occurrences where one \textbf{crsp\_fundno} matches with multiple \textbf{wficn}. We suspected it could have to do something with delisting / merging of funds, and ultimately decided to drop these samples based on the descriptions in the paper. After obtaining the appropriate \textbf{wficn} values, we computed the yearly returns by first computing each fund's monthly returns. At this point, we ran into another issue: in our attempt replicate the paper's use of \textbf{mtna}, we noticed that not all \textbf{mtna} values are available. To solve this issue, we decided to use simple average instead because we expected different share classes of a given mutual fund to have similar returns. We then merged the TNA and yearly return information and got the following table: 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{cccc}
+wficn & Year & TNA 3 & Yearly Return \\
+\hline
+100001 & 1990 & 169.570 & 0.027962 \\
+100001 & 1991 & 330.031 & 0.301927 \\
+100001 & 1992 & 596.275 & 0.057012 \\
+100001 & 1993 & 857.674 & 0.060564 \\
+100001 & 1994 & 876.194 & -0.013763 \\
+\multicolumn{4}{c}{...} 
+\end{tabular}
+\caption{Year-end TNA Head}
+\label{Table-a}
+\end{table}
+
+We then moved on to the S12 data...
+
+
+
+\end{document}
