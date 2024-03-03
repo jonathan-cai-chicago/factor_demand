@@ -171,3 +171,27 @@ def task_run_notebooks():
         "clean": True,
     }
 
+
+def task_compile_latex_docs():
+
+    file_dep = [
+        "./reports/project_writeup.tex", 
+        "./src/02_raw_data_walkthrough.py", 
+    ]
+    file_output = [
+        "./reports/project_writeup.pdf", 
+    ]
+    
+    targets = [file for file in file_output]
+
+    return {
+        "actions": [
+            "latexmk -xelatex -cd ./reports/project_writeup.tex",  # Compile
+            "latexmk -xelatex -c -cd ./reports/project_writeup.tex",  # Clean 
+        ],
+        "targets": targets,
+        "file_dep": file_dep,
+        "clean": True,
+    }
+
+
