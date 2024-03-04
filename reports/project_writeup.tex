@@ -24,6 +24,8 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
 \usepackage{indentfirst}
+\usepackage{booktabs} 
+
 
 
 \title{Final Project}
@@ -82,7 +84,7 @@ returns. We then merged the TNA and yearly return information and got the follow
 \centering
 \captionsetup{labelformat=empty, font=bf}
 \caption{Yearly Returns and Year End TNA}
-\input{table_crsp_clean.tex}
+\input{../output/table_crsp_clean.tex}
 \vspace{5pt} % Adds some vertical space between the table and the ellipses, adjust as needed
 
 \begin{tabular}{c} % Creates a single centered column for the ellipses
@@ -104,7 +106,7 @@ table describing the S12 TNA data:
 \centering
 \captionsetup{labelformat=empty, font=bf}
 \caption{Dometic Equity}
-\input{table1b.tex}
+\input{../output/table1b.tex}
 
 \vspace{5pt} % Adds some vertical space between the table and the ellipses, adjust as needed
 
@@ -115,7 +117,7 @@ table describing the S12 TNA data:
 
 \end{table} 
 
-Finally, we merge the CRSP and S12 data, and ultimately create a 
+Finally, we merged the CRSP and S12 data, and ultimately created a 
 close replication of table 1 of the paper. 
 
 % \begin{table}[ht]
@@ -128,14 +130,42 @@ close replication of table 1 of the paper.
 
 \section{Replicating Table 2}
 
-Then, we moved on to replicating table 2. We began by using the same merged CRSP and S12 data 
-that we computed in table 1. We found much more success in replicating this table; the main 
-challenge of this project was re-creating the original dataset. To obtain the Fama French 
-Factor returns, we pulled factor returns \textbf{df\_ff} from 
+Then, we moved on to replicating table 2.We found much more success in replicating this table; the main 
+challenge of this project was re-creating the original dataset. We began by using the same sample of 
+merged CRSP and S12 data that we computed in table 1. After furhter cleaning and preparing the data, 
+we created a table for CRSPM Mutual Fund Data to get the main sample's monthly returns. We present 
+the latter end of the table.   
+
+% \input{../output/latexTS_crsp_t2.tex}
+
+To obtain the Fama French Factor returns, we pulled factor returns \textbf{df\_ff} from 
 \href{http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/index.html}{Kenneth 
 R. French's Website}. We then merged the CRSP dataset with a Fama-French dataset based on
-dates, calculated investment flow for each unique 'wficn' identifier as the 
-percentage change in total net assets adjusted for returns, and merged this flow
-information back into the original dataset.
+dates and calculated investment flow for each unique 'wficn' identifier as the 
+percentage change in total net assets adjusted for returns as follows: 
+
+$$
+\text{flow}_{i,t} = \frac{\text{TNA}_{i,t}}{\text{TNA}_{i,t-1}} \times (1 + \text{ret}_{i,t})
+$$
+
+Again, we present the latter end of this table. 
+
+To replicate Panel A, for each fund i in month t, we run the following rolling time-series regression:
+
+\begin{align*}
+    \text{ret}_{i,t+1-k} = & \ \alpha_{i,t} + \beta_{\text{MKT} i,t} \times \text{MKT}_{t+1-k} \\
+    & + \beta_{\text{HML} i,t} \times \text{HML}_{t+1-k} \\
+    & + \beta_{\text{SMB} i,t} \times \text{SMB}_{t+1-k} \\
+    & + \beta_{\text{MOM} i,t} \times \text{MOM}_{t+1-k} \\
+    & + \beta_{\text{CMA} i,t} \times \text{CMA}_{t+1-k} \\
+    & + \beta_{\text{RMW} i,t} \times \text{RMW}_{t+1-k} \\
+    & + \beta_{\text{flow} i,t} \times \text{flow}_{i,t+1-k} \\
+    & + \epsilon_{i,t,t+1-k}
+\end{align*} 
+where k = 1,2,...,60. For Panel B, we classified funds according to Lipper mutual fund classifications and 
+repeat the same regression. Finally, for Panel C, we classified the funds according to index fund status. 
+
+
+
 
 \end{document}
