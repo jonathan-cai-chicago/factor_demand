@@ -58,7 +58,7 @@ found \href{https://wrds-www.wharton.upenn.edu/data-dictionary/crsp_q_mutualfund
 only uses US domestic equity mutual funds in their analysis. Accordingly, we pulled data
 from WRDS' \href{https://wrds-www.wharton.upenn.edu/data-dictionary/crsp_q_mutualfunds/fund_style/}{Style attributes for each fund} table in order to 
 filter the data. Our quarterly fund holdings data was pulled from 
-the \href{https://wrds-www.wharton.upenn.edu/data-dictionary/tr_mutualfunds/s12/}{Thomson-Reuters Mutual Fund Holdings (s12)} dataset
+the \href{https://wrds-www.wharton.upenn.edu/data-dictionary/tr_mutualfunds/s12/}{Thomson-Reuters Mutual Fund Holdings (s12)} dataset.
 
 
 \subsection{Cleaning the Data}
@@ -76,14 +76,15 @@ monthly returns. At this point, we
 ran into another issue: in our attempt replicate the paper's use of \textbf{mtna}, we noticed that
 not all \textbf{mtna} values are available. To solve this issue, we decided to use simple
 average instead because we expected different share classes of a given mutual fund to have similar
-returns. We then merged the TNA and yearly return information and got the following table: 
-
+returns. We then merged the TNA and yearly return information and created a table with the following
+head:  
 
 \begin{table}[ht]
 
 \centering
 \captionsetup{labelformat=empty, font=bf}
 \caption{Yearly Returns and Year End TNA}
+\label{tab:table_crsp_clean}
 \input{../output/table_crsp_clean.tex}
 \vspace{5pt} % Adds some vertical space between the table and the ellipses, adjust as needed
 
@@ -98,14 +99,14 @@ We then followed a similar process when preparing the S12 data. As such, we ran 
 tangentially similar issues: missing TNA values, minor discrepancies between
 \textbf{mflink1} and \textbf{mflink2}, and some troubles with filtering the data 
 to Domestic Equity. After solving these issues through various methods, we formed a
-table describing the S12 TNA data: 
+table describing the S12 TNA data. The head of this table is shown above. 
 
 
 \begin{table}
 
 \centering
 \captionsetup{labelformat=empty, font=bf}
-\caption{Dometic Equity}
+\caption{Domestic Equity}
 \input{../output/table1b.tex}
 
 \vspace{5pt} % Adds some vertical space between the table and the ellipses, adjust as needed
@@ -116,17 +117,10 @@ table describing the S12 TNA data:
 \end{tabular}
 
 \end{table} 
+ 
+Finally, we merged the CRSP and S12 data, and ultimately created
+a close \hyperref[tab:table_complete]{replication} of Table 1 of the paper.
 
-Finally, we merged the CRSP and S12 data, and ultimately created a 
-close replication of table 1 of the paper. 
-
-% \begin{table}[ht]
-
-% \centering
-
-% \input{table1_complete.tex}
-
-% \end{table}
 
 \section{Replicating Table 2}
 
@@ -166,6 +160,12 @@ where k = 1,2,...,60. For Panel B, we classified funds according to Lipper mutua
 repeat the same regression. Finally, for Panel C, we classified the funds according to index fund status. 
 
 
-
+\begin{table}[ht]
+    \centering
+    \caption*{Replication of Table 1}
+    \label{tab:table_complete}
+    \input{../output/table1_complete.tex}  
+\end{table}
+    
 
 \end{document}
