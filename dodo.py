@@ -115,6 +115,7 @@ def task_convert_notebooks_to_scripts():
     notebooks = [
         "01_example_notebook.ipynb",
         "02_raw_data_walkthrough.ipynb",
+        "bonus_charts_and_tables_walkthrough.ipynb",
     ]
     file_dep = [Path("./src") / file for file in notebooks]
     stems = [notebook.split(".")[0] for notebook in notebooks]
@@ -142,6 +143,7 @@ def task_run_notebooks():
     notebooks = [
         "01_example_notebook.ipynb",
         "02_raw_data_walkthrough.ipynb",
+        "bonus_charts_and_tables_walkthrough.ipynb",
     ]
     stems = [notebook.split(".")[0] for notebook in notebooks]
 
