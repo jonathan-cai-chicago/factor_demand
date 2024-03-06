@@ -114,7 +114,7 @@ def task_convert_notebooks_to_scripts():
 
     notebooks = [ 
         "02_raw_data_walkthrough.ipynb",
-        # "03_fama_french.ipynb",
+        "03_fama_french.ipynb",
     ]
     file_dep = [Path("./src") / file for file in notebooks]
     stems = [notebook.split(".")[0] for notebook in notebooks]
@@ -141,7 +141,7 @@ def task_run_notebooks():
     """
     notebooks = [ 
         "02_raw_data_walkthrough.ipynb",
-        # "03_fama_french.ipynb",
+        "03_fama_french.ipynb",
     ]
     stems = [notebook.split(".")[0] for notebook in notebooks]
 
@@ -175,6 +175,7 @@ def task_compile_latex_docs():
     file_dep = [
         "./reports/project_writeup.tex", 
         "./output/_02_raw_data_walkthrough.py",  
+        "./output/_03_fama_french.py",
     ]
     file_output = [
         "./output/project_writeup.pdf", 
