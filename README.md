@@ -11,6 +11,7 @@ Replication for Factor Demand
 - `src/load_s12.py`: load S12 mutual fund holdings data. (Jonathan)
 - `src/load_mflink.py`: load MFLINK data for merging CRSP and S12 data. (Jonathan)
 - `src/02_raw_data_walkthrough.ipynb`: demonstrate how to process the raw data into tidy format and replicate Table 1. (Jonathan)
+- `src/bonus_charts_and_tables_walkthrough.ipynb`: exploratory data analysis notebook. Look specificall at the returns and the specific codes for the funds. (JS)
 
 # Individual Contributions
 ## Jonathan Cai
@@ -21,6 +22,11 @@ Replication for Factor Demand
 - Deep dive to identify the correct filters used in the paper, such as how to correctly identify "domestic equity" mutual funds. 
 - Attempt to replicate table 1 of the paper by applying all filters mentioned in the paper. 
 - Write Jupyter notebooks to explain the raw data and replication attempts.
+
+## Jean-Sebastien Gaultier
+- work on the analysis of the returns
+- build histograms to compare the different fund returns
+- try to add to the Table 1 returns columns.
 
 
 # Quick Start
