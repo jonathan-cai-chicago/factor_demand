@@ -142,11 +142,8 @@ def task_run_notebooks():
     """
     notebooks = [ 
         "02_raw_data_walkthrough.ipynb",
-<<<<<<< HEAD
         "bonus_charts_and_tables_walkthrough.ipynb",
-=======
         "03_fama_french.ipynb",
->>>>>>> adam-branch
     ]
     stems = [notebook.split(".")[0] for notebook in notebooks]
 
