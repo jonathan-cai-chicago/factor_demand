@@ -1,11 +1,15 @@
 import numpy as np
-from sklearn.linear_model import LinearRegression
+import wrds
 import config
 from pathlib import Path
 
 DATA_DIR = Path(config.DATA_DIR)
+WRDS_USERNAME = config.WRDS_USERNAME
+START_DATE = config.START_DATE
+END_DATE = config.END_DATE
 OUTPUT_DIR = Path(config.OUTPUT_DIR)
 
+from sklearn.linear_model import LinearRegression
 from load_CRSP_fund import load_CRSP_combined_file
 from load_mflink import load_mflink1
 from factor_betas_calculation import monthly_mutual_fund, fama_french_factors, regression_df, regression, calc_penal_A, calc_penal_B, calc_penal_C
