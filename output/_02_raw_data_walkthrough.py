@@ -373,12 +373,13 @@ df_combo.groupby("year").size().reset_index().rename(columns={0: "count"})
 # In[ ]:
 
 
-df_complete = df_combo.groupby("year")[["crsp_tna", "yret"]].agg(["mean", "median"]).reset_index().round(2)
+df_combo.groupby("year")[["crsp_tna", "yret"]].agg(["mean", "median"]).reset_index().round(2)
 
 
 # In[ ]:
 
 
+df_complete = df_combo.groupby("year")[["crsp_tna", "yret"]].agg(["mean", "median"]).reset_index().round(2)
 df_complete = df_complete.rename(columns={'crsp_tna': '$crsp_{TNA}$'}) 
 latexTS_df_complete = df_complete.to_latex(float_format = float_format_func)
 

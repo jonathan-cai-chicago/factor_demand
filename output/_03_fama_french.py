@@ -88,7 +88,7 @@ df_ff = df_ff[(df_ff['date'] >= 198001) & (df_ff['date'] <= 201912)]
 df_ff
 
 
-# - CRSP data and factor returns are merged, and for each fund i in month t, flow_{i,t} is calculated using the formula:
+# - CRSP data and factor returns are merged, and for each fund i in month t, $flow_{i,t}$ is calculated using the formula:
 # 
 # $$
 # \text{flow}_{i,t} = \frac{\text{TNA}_{i,t}}{\text{TNA}_{i,t-1}} \times (1 + \text{ret}_{i,t})
@@ -154,7 +154,7 @@ def regression(df):
 # In[ ]:
 
 
-#df_reg = df_reg.sample(frac=0.3, random_state=42)
+df_reg = df_reg.sample(frac=0.3, random_state=42)
 all_funds = regression(df_reg)
 panelA = all_funds.describe().loc[['mean', 'std']].append(all_funds.quantile(0.05)).append(all_funds.describe().loc[['25%', '50%', '75%']]).append(all_funds.quantile(0.95))
 panelA = panelA.rename(index={0.05: 'P5', '25%': 'P25', '50%': 'P50', '75%': 'P75', 0.95: 'P95'})
@@ -251,4 +251,79 @@ path_to_save = f'../output/table_panelC.tex'
 
 with open(path_to_save, 'w') as f: 
     f.write(latexTS_panelC) 
+
+
+# # Recalculation using data up until the Present
+
+# In[ ]:
+
+
+df_ff = pd.read_csv(Path(config.DATA_DIR)/'manual'/'F-F_Research_Data_5_Factors_2x3.csv').drop(['RF'], axis=1)
+df_mom = pd.read_csv(Path(config.DATA_DIR)/'manual'/'F-F_Momentum_Factor.csv')
+df_ff = df_ff.merge(df_mom, how='inner', on=['date'])
+df_ff = df_ff[df_ff['date'] >= 202001]
+
+df_reg = pd.merge(df_crsp[df_crsp['date'] >= 202001], df_ff, on=['date'], how="outer").sort_values(["date"])
+flow = df_reg.groupby('wficn').apply(lambda d: d['crsp_tna']/(d['crsp_tna'].shift(1)) - (1+d['crsp_ret'])).reset_index().rename(columns={'level_1': 'index', 0: "flow"})
+flow.set_index('index', inplace=True)
+df_reg = pd.merge(df_reg, flow[['flow']], left_index=True, right_index=True).sort_values(['wficn', 'date'])
+df_reg[['crsp_ret', 'flow']] *= 100
+df_reg.replace([np.inf, -np.inf], np.nan, inplace=True)
+df_reg= df_reg.fillna(0)
+df_reg
+
+
+# In[ ]:
+
+
+all_funds_pre = regression(df_reg)
+panelA_pre = all_funds_pre.describe().loc[['mean', 'std']].append(all_funds_pre.quantile(0.05)).append(all_funds_pre.describe().loc[['25%', '50%', '75%']]).append(all_funds_pre.quantile(0.95))
+panelA_pre = panelA_pre.rename(index={0.05: 'P5', '25%': 'P25', '50%': 'P50', '75%': 'P75', 0.95: 'P95'})
+panelA_pre
+
+
+# In[ ]:
+
+
+df_growth = df_reg[df_reg['lipper_class_name'].astype(str).str.contains('Growth', case=False, regex=True)]
+df_value = df_reg[df_reg['lipper_class_name'].astype(str).str.contains('Value', case=False, regex=True)]
+df_base = df_reg[df_reg['lipper_class_name'].astype(str).str.contains('Base', case=False, regex=True)]
+df_large_cap = df_reg[df_reg['lipper_class_name'].astype(str).str.contains('Large-Cap', case=False, regex=True)]
+df_mid_cap = df_reg[df_reg['lipper_class_name'].astype(str).str.contains('Mid-Cap', case=False, regex=True)]
+df_small_cap = df_reg[df_reg['lipper_class_name'].astype(str).str.contains('Small-Cap', case=False, regex=True)]
+
+growth_pre = regression(df_growth)
+value_pre = regression(df_value)
+base_pre = regression(df_base)
+large_cap_pre = regression(df_large_cap)
+mid_cap_pre = regression(df_mid_cap)
+small_cap_pre = regression(df_small_cap)
+panelB_pre = pd.DataFrame({'All': all_funds_pre.mean(), 'Growth': growth_pre.mean(), 'Value': value_pre.mean(), 
+              'Large cap': large_cap_pre.mean(), 'Medium cap': mid_cap_pre.mean(), 'Small cap': small_cap_pre.mean()}).T
+panelB_pre
+
+
+# In[ ]:
+
+
+df_index = df_reg[df_reg['index_fund_flag'].astype(str).str.contains('D|B|E', case=False, regex=True)]
+df_enhanced = df_reg[df_reg['index_fund_flag'].astype(str).str.contains('E', case=False, regex=True)]
+df_base = df_reg[df_reg['index_fund_flag'].astype(str).str.contains('B', case=False, regex=True)]
+df_pure = df_reg[df_reg['index_fund_flag'].astype(str).str.contains('D', case=False, regex=True)]
+df_non_index = df_reg[~df_reg['index_fund_flag'].astype(str).str.contains('D|B|E', case=False, regex=True)]
+
+index_pre = regression(df_index)
+enhanced_pre = regression(df_enhanced)
+base_pre = regression(df_base)
+pure_pre = regression(df_pure)
+non_index_pre = regression(df_non_index)
+panelC_pre = pd.DataFrame({'All index funds': index_pre.mean(), 'Enhanced': enhanced_pre.mean(), 'Base': base_pre.mean(), 
+              'Pure': pure_pre.mean(), 'All non-index funds': non_index_pre.mean()}).T
+panelC_pre
+
+
+# In[ ]:
+
+
+
 

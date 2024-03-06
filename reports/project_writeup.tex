@@ -122,10 +122,12 @@ Finally, we merged the CRSP and S12 data, and ultimately created
 a close \hyperref[tab:table_complete]{replication} of Table 1 of the paper.
 
 
+
 \section{Replicating Table 2}
 
 Then, we moved on to replicating table 2.We found much more success in replicating this table; the main 
-challenge of this project was re-creating the original dataset. We began by using the same sample of 
+challenge of this project was re-creating the original dataset. However, running the regression, even after subsampling
+the data, took many hours, which was the primary challenge of replicating table 2. We began by using the same sample of 
 merged CRSP and S12 data that we computed in table 1. After furhter cleaning and preparing the data, 
 we created a table for CRSPM Mutual Fund Data to get the main sample's monthly returns. We present 
 the latter end of the table.   
@@ -158,8 +160,43 @@ To replicate Panel A, for each fund i in month t, we run the following rolling t
 \end{align*} 
 where k = 1,2,...,60. For Panel B, we classified funds according to Lipper mutual fund classifications and 
 repeated the same regression. Finally, for Panel C, we classified the funds according to index fund status and 
-repeated the process. 
+repeated the process. Then, we did the same thing but with data up until the present. 
 
+
+
+Here are some of our summary statistics of the data: 
+
+We created a \hyperref[fig:image1]{yearly average return plot} that shows which years the funds were good
+to invest in and the years they were not as much. In this graph, we see the significant impact of the 2008 crisis
+- all the funds were down on average 40\%. 
+We also plotted \hyperref[fig:image2]{returns by year and fund group type}. From this plot, we see 
+how the different types of funds acted over the duration of the data, and conclude that 
+most funds made money other than the EDYS funds. Then, we created a plot that counted the number 
+of funds per object code. We notice that EDYG funds have existed for the longest and are the most 
+popular. Their return seems to follow the market at an average of almost 10\% per year. 
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics{../data/manual/histogram.png}
+    \caption{Yearly average return plot}
+    \label{fig:image1}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics{../data/manual/histogram_mret_per_code.png}
+    \caption{Returns by Year and Fund Group Type}
+    \label{fig:image2}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics{../data/manual/histogram_code_count.png}
+    \caption{Funds Per Object Code}
+    \label{fig:image2}
+\end{figure}
 
 \begin{table}[ht]
     \centering
@@ -168,5 +205,7 @@ repeated the process.
     \input{../output/table1_complete.tex}  
 \end{table}
     
+
+
 
 \end{document}
