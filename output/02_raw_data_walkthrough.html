@@ -7624,14 +7624,14 @@ Name: count, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Before merging, df_crsp has 3592622 rows
+<pre>Before merging, df_crsp has 3555788 rows
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>After merging, df_crsp has 3297001 rows
+<pre>After merging, df_crsp has 3270889 rows
 </pre>
 </div>
 </div>
@@ -7690,6 +7690,7 @@ Name: count, dtype: int64</pre>
 <th>lipper_asset_cd</th>
 <th>lipper_class_name</th>
 <th>crsp_obj_cd</th>
+<th>index_fund_flag</th>
 <th>wficn</th>
 <th>year</th>
 <th>month</th>
@@ -7697,73 +7698,78 @@ Name: count, dtype: int64</pre>
 </thead>
 <tbody>
 <tr>
-<th>16401</th>
-<td>1970-01-30</td>
+<th>2037233</th>
+<td>1980-01-31</td>
+<td>32668.0</td>
+<td>NaN</td>
+<td>0.000000</td>
+<td>NaN</td>
+<td>None</td>
+<td>None</td>
+<td>EDYG</td>
+<td>None</td>
+<td>100007</td>
+<td>1980</td>
+<td>1</td>
+</tr>
+<tr>
+<th>9735</th>
+<td>1980-01-31</td>
+<td>967.0</td>
+<td>NaN</td>
+<td>0.121324</td>
+<td>12.20</td>
+<td>None</td>
+<td>None</td>
+<td>EDYG</td>
+<td>None</td>
+<td>100010</td>
+<td>1980</td>
+<td>1</td>
+</tr>
+<tr>
+<th>345169</th>
+<td>1980-01-31</td>
+<td>7353.0</td>
+<td>NaN</td>
+<td>0.056240</td>
+<td>24.38</td>
+<td>None</td>
+<td>None</td>
+<td>EDYG</td>
+<td>None</td>
+<td>100019</td>
+<td>1980</td>
+<td>1</td>
+</tr>
+<tr>
+<th>15517</th>
+<td>1980-01-31</td>
 <td>1445.0</td>
 <td>NaN</td>
-<td>-0.072727</td>
-<td>6.12</td>
+<td>0.016978</td>
+<td>5.99</td>
 <td>None</td>
 <td>None</td>
 <td>EDYG</td>
+<td>None</td>
 <td>100046</td>
-<td>1970</td>
+<td>1980</td>
 <td>1</td>
 </tr>
 <tr>
-<th>3355</th>
-<td>1970-01-30</td>
+<th>3757</th>
+<td>1980-01-31</td>
 <td>297.0</td>
 <td>NaN</td>
-<td>-0.114423</td>
-<td>9.21</td>
+<td>0.079268</td>
+<td>17.70</td>
 <td>None</td>
 <td>None</td>
 <td>EDYG</td>
+<td>None</td>
 <td>100056</td>
-<td>1970</td>
-<td>1</td>
-</tr>
-<tr>
-<th>32443</th>
-<td>1970-01-30</td>
-<td>2899.0</td>
-<td>NaN</td>
-<td>-0.101952</td>
-<td>8.28</td>
-<td>None</td>
-<td>None</td>
-<td>EDYG</td>
-<td>100071</td>
-<td>1970</td>
-<td>1</td>
-</tr>
-<tr>
-<th>45606</th>
-<td>1970-01-30</td>
-<td>2903.0</td>
-<td>NaN</td>
-<td>-0.039831</td>
-<td>11.33</td>
-<td>None</td>
-<td>None</td>
-<td>EDYG</td>
-<td>100072</td>
-<td>1970</td>
-<td>1</td>
-</tr>
-<tr>
-<th>101458</th>
-<td>1970-01-30</td>
-<td>3721.0</td>
-<td>NaN</td>
-<td>-0.073922</td>
-<td>8.20</td>
-<td>None</td>
-<td>None</td>
-<td>EDYG</td>
-<td>100076</td>
-<td>1970</td>
+<td>1980</td>
 <td>1</td>
 </tr>
 </tbody>
@@ -7811,7 +7817,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0.02617742609116588</pre>
+<pre>0.020550376365569115</pre>
 </div>
 </div>
 </div>
@@ -8072,6 +8078,30 @@ Name: count, dtype: int64</pre>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.float_format'</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">'</span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">float_format_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">'</span><span class="si">{:.2f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">df_crsp_clean</span> <span class="o">=</span> <span class="n">df_crsp_clean</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'crsp_tna'</span><span class="p">:</span> <span class="s1">'$crsp_</span><span class="si">{TNA}</span><span class="s1">$'</span><span class="p">})</span> 
+<span class="n">latexTS_crsp_clean</span> <span class="o">=</span> <span class="n">df_crsp_clean</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_latex</span><span class="p">(</span><span class="n">float_format</span> <span class="o">=</span> <span class="n">float_format_func</span><span class="p">)</span>
+
+<span class="n">path_to_save</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'../output/table_crsp_clean.tex'</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_save</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> 
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">latexTS_crsp_clean</span><span class="p">)</span>
+    
+<span class="n">df_crsp_clean</span> <span class="o">=</span> <span class="n">df_crsp_clean</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'$crsp_</span><span class="si">{TNA}</span><span class="s1">$'</span><span class="p">:</span> <span class="s1">'crsp_tna'</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8096,7 +8126,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -8148,7 +8178,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">temp</span>
@@ -8162,7 +8192,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8191,73 +8221,73 @@ Name: count, dtype: int64</pre>
 <tbody>
 <tr>
 <th>0</th>
-<td>2007.0</td>
+<td>2007.00</td>
 <td>4365627</td>
 <td>688</td>
-<td>0.015759</td>
+<td>0.02</td>
 </tr>
 <tr>
 <th>1</th>
-<td>2008.0</td>
+<td>2008.00</td>
 <td>4812433</td>
 <td>2405</td>
-<td>0.049975</td>
+<td>0.05</td>
 </tr>
 <tr>
 <th>2</th>
-<td>2009.0</td>
+<td>2009.00</td>
 <td>4792996</td>
 <td>926</td>
-<td>0.019320</td>
+<td>0.02</td>
 </tr>
 <tr>
 <th>3</th>
-<td>2010.0</td>
+<td>2010.00</td>
 <td>4343944</td>
 <td>822231</td>
-<td>18.928214</td>
+<td>18.93</td>
 </tr>
 <tr>
 <th>4</th>
-<td>2011.0</td>
+<td>2011.00</td>
 <td>4097533</td>
 <td>3743918</td>
-<td>91.370051</td>
+<td>91.37</td>
 </tr>
 <tr>
 <th>5</th>
-<td>2012.0</td>
+<td>2012.00</td>
 <td>4135072</td>
 <td>3939564</td>
-<td>95.271957</td>
+<td>95.27</td>
 </tr>
 <tr>
 <th>6</th>
-<td>2013.0</td>
+<td>2013.00</td>
 <td>4139295</td>
 <td>2457418</td>
-<td>59.368032</td>
+<td>59.37</td>
 </tr>
 <tr>
 <th>7</th>
-<td>2014.0</td>
+<td>2014.00</td>
 <td>4405473</td>
 <td>145486</td>
-<td>3.302392</td>
+<td>3.30</td>
 </tr>
 <tr>
 <th>8</th>
-<td>2015.0</td>
+<td>2015.00</td>
 <td>4900764</td>
 <td>3059</td>
-<td>0.062419</td>
+<td>0.06</td>
 </tr>
 <tr>
 <th>9</th>
-<td>2016.0</td>
+<td>2016.00</td>
 <td>5249452</td>
 <td>8173</td>
-<td>0.155692</td>
+<td>0.16</td>
 </tr>
 </tbody>
 </table>
@@ -8288,7 +8318,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Before merge: </span><span class="si">{</span><span class="n">df_s12</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -8345,7 +8375,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># temporarily fillna with 0 to avoid missing records</span>
@@ -8374,7 +8404,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">df_eq</span><span class="p">[</span><span class="s1">'assets'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df_eq</span><span class="p">[</span><span class="s1">'assets'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">df_eq</span><span class="p">[</span><span class="s1">'assets'</span><span class="p">])</span>
@@ -8402,7 +8432,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">df_eq</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -8416,7 +8446,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8448,41 +8478,41 @@ Name: count, dtype: int64</pre>
 <th>0</th>
 <td>1980</td>
 <td>1980-03-31</td>
-<td>100007.0</td>
-<td>235.0</td>
-<td>2997.29000</td>
+<td>100007.00</td>
+<td>235.00</td>
+<td>2997.29</td>
 </tr>
 <tr>
 <th>1</th>
 <td>1980</td>
 <td>1980-03-31</td>
-<td>100010.0</td>
-<td>5967.0</td>
-<td>49518.54094</td>
+<td>100010.00</td>
+<td>5967.00</td>
+<td>49518.54</td>
 </tr>
 <tr>
 <th>2</th>
 <td>1980</td>
 <td>1980-03-31</td>
-<td>100019.0</td>
-<td>6825.0</td>
-<td>44089.73500</td>
+<td>100019.00</td>
+<td>6825.00</td>
+<td>44089.74</td>
 </tr>
 <tr>
 <th>3</th>
 <td>1980</td>
 <td>1980-03-31</td>
-<td>100046.0</td>
-<td>3313.0</td>
-<td>24476.75100</td>
+<td>100046.00</td>
+<td>3313.00</td>
+<td>24476.75</td>
 </tr>
 <tr>
 <th>4</th>
 <td>1980</td>
 <td>1980-03-31</td>
-<td>100050.0</td>
-<td>3319.0</td>
-<td>2940.38700</td>
+<td>100050.00</td>
+<td>3319.00</td>
+<td>2940.39</td>
 </tr>
 </tbody>
 </table>
@@ -8496,10 +8526,33 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">df_eq</span> <span class="o">=</span> <span class="n">df_eq</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'wficn'</span><span class="p">,</span> <span class="s1">'year'</span><span class="p">])[[</span><span class="s1">'assets'</span><span class="p">,</span> <span class="s1">'useq_tna_k'</span><span class="p">]]</span><span class="o">.</span><span class="n">last</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">df_eq</span> <span class="o">=</span> <span class="n">df_eq</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'useq_tna_k'</span><span class="p">:</span> <span class="s1">'$useq_</span><span class="si">{TNA}</span><span class="s1">$'</span><span class="p">})</span> 
+
+<span class="n">latexTS_df_eq</span> <span class="o">=</span> <span class="n">df_eq</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_latex</span><span class="p">(</span><span class="n">float_format</span> <span class="o">=</span> <span class="n">float_format_func</span><span class="p">)</span>
+
+<span class="n">path_to_save</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'../output/table1b.tex'</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_save</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> 
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">latexTS_df_eq</span><span class="p">)</span>
+
+<span class="n">df_eq</span> <span class="o">=</span> <span class="n">df_eq</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'$useq_</span><span class="si">{TNA}</span><span class="s1">$'</span><span class="p">:</span> <span class="s1">'useq_tna_k'</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -8523,187 +8576,10 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">df_eq</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>wficn</th>
-<th>year</th>
-<th>assets</th>
-<th>useq_tna_k</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>100001.0</td>
-<td>1990</td>
-<td>16957.0</td>
-<td>161803.10000</td>
-</tr>
-<tr>
-<th>1</th>
-<td>100001.0</td>
-<td>1991</td>
-<td>33003.0</td>
-<td>314952.40000</td>
-</tr>
-<tr>
-<th>2</th>
-<td>100001.0</td>
-<td>1992</td>
-<td>59627.0</td>
-<td>578201.50000</td>
-</tr>
-<tr>
-<th>3</th>
-<td>100001.0</td>
-<td>1993</td>
-<td>84286.0</td>
-<td>821482.00000</td>
-</tr>
-<tr>
-<th>4</th>
-<td>100001.0</td>
-<td>1994</td>
-<td>92961.0</td>
-<td>896403.42887</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">df_crsp_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>wficn</th>
-<th>year</th>
-<th>crsp_tna</th>
-<th>yret</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>100001</td>
-<td>1990</td>
-<td>169.570</td>
-<td>0.027962</td>
-</tr>
-<tr>
-<th>1</th>
-<td>100001</td>
-<td>1991</td>
-<td>330.031</td>
-<td>0.301927</td>
-</tr>
-<tr>
-<th>2</th>
-<td>100001</td>
-<td>1992</td>
-<td>596.275</td>
-<td>0.057012</td>
-</tr>
-<tr>
-<th>3</th>
-<td>100001</td>
-<td>1993</td>
-<td>857.674</td>
-<td>0.060564</td>
-</tr>
-<tr>
-<th>4</th>
-<td>100001</td>
-<td>1994</td>
-<td>876.194</td>
-<td>-0.013763</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">df_combo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_crsp_clean</span><span class="p">,</span> <span class="n">df_eq</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">"wficn"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">"inner"</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"year"</span><span class="p">)</span>
-<span class="n">df_combo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">df_eq</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -8736,6 +8612,183 @@ Name: count, dtype: int64</pre>
 <th></th>
 <th>wficn</th>
 <th>year</th>
+<th>assets</th>
+<th>useq_tna_k</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>100001.00</td>
+<td>1990</td>
+<td>16957.00</td>
+<td>161803.10</td>
+</tr>
+<tr>
+<th>1</th>
+<td>100001.00</td>
+<td>1991</td>
+<td>33003.00</td>
+<td>314952.40</td>
+</tr>
+<tr>
+<th>2</th>
+<td>100001.00</td>
+<td>1992</td>
+<td>59627.00</td>
+<td>578201.50</td>
+</tr>
+<tr>
+<th>3</th>
+<td>100001.00</td>
+<td>1993</td>
+<td>84286.00</td>
+<td>821482.00</td>
+</tr>
+<tr>
+<th>4</th>
+<td>100001.00</td>
+<td>1994</td>
+<td>92961.00</td>
+<td>896403.43</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">df_crsp_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>wficn</th>
+<th>year</th>
+<th>crsp_tna</th>
+<th>yret</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>100001</td>
+<td>1990</td>
+<td>169.57</td>
+<td>0.03</td>
+</tr>
+<tr>
+<th>1</th>
+<td>100001</td>
+<td>1991</td>
+<td>330.03</td>
+<td>0.30</td>
+</tr>
+<tr>
+<th>2</th>
+<td>100001</td>
+<td>1992</td>
+<td>596.27</td>
+<td>0.06</td>
+</tr>
+<tr>
+<th>3</th>
+<td>100001</td>
+<td>1993</td>
+<td>857.67</td>
+<td>0.06</td>
+</tr>
+<tr>
+<th>4</th>
+<td>100001</td>
+<td>1994</td>
+<td>876.19</td>
+<td>-0.01</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">df_combo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_crsp_clean</span><span class="p">,</span> <span class="n">df_eq</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">"wficn"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">"inner"</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"year"</span><span class="p">)</span>
+<span class="n">df_combo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>wficn</th>
+<th>year</th>
 <th>crsp_tna</th>
 <th>yret</th>
 <th>assets</th>
@@ -8747,50 +8800,66 @@ Name: count, dtype: int64</pre>
 <th>20508</th>
 <td>102761</td>
 <td>1980</td>
-<td>739.858</td>
-<td>0.371615</td>
-<td>73986.0</td>
-<td>546034.24606</td>
+<td>739.86</td>
+<td>0.37</td>
+<td>73986.00</td>
+<td>546034.25</td>
 </tr>
 <tr>
 <th>20690</th>
 <td>102784</td>
 <td>1980</td>
-<td>86.767</td>
-<td>0.413491</td>
-<td>8677.0</td>
-<td>82975.89725</td>
+<td>86.77</td>
+<td>0.41</td>
+<td>8677.00</td>
+<td>82975.90</td>
 </tr>
 <tr>
 <th>441</th>
 <td>100056</td>
 <td>1980</td>
-<td>30.222</td>
-<td>0.374836</td>
-<td>3022.0</td>
-<td>21158.88875</td>
+<td>30.22</td>
+<td>0.37</td>
+<td>3022.00</td>
+<td>21158.89</td>
 </tr>
 <tr>
 <th>13438</th>
 <td>101740</td>
 <td>1980</td>
-<td>33.513</td>
-<td>0.515085</td>
-<td>3351.0</td>
-<td>27170.69425</td>
+<td>33.51</td>
+<td>0.52</td>
+<td>3351.00</td>
+<td>27170.69</td>
 </tr>
 <tr>
 <th>1399</th>
 <td>100196</td>
 <td>1980</td>
-<td>89.357</td>
-<td>0.350494</td>
-<td>8934.0</td>
-<td>24904.42800</td>
+<td>89.36</td>
+<td>0.35</td>
+<td>8934.00</td>
+<td>24904.43</td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">OUTPUT_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">OUTPUT_DIR</span><span class="p">)</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">/</span> <span class="s2">"main_sample.parquet"</span> 
+<span class="n">df_combo</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -8815,7 +8884,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">df_combo</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'year'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">'count'</span><span class="p">})</span>
@@ -8829,7 +8898,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9099,7 +9168,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># TNA above 1 million at year end</span>
@@ -9115,7 +9184,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9385,7 +9454,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">df_combo</span><span class="p">[</span><span class="s2">"tna_ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
@@ -9405,7 +9474,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9677,7 +9746,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">df_combo</span><span class="p">[</span><span class="s2">"eq_ratio_1"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_combo</span><span class="p">[</span><span class="s2">"useq_tna_k"</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e3</span> <span class="o">/</span> <span class="p">(</span><span class="n">df_combo</span><span class="p">[</span><span class="s2">"crsp_tna"</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
@@ -9697,7 +9766,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9733,61 +9802,61 @@ Name: count, dtype: int64</pre>
 <th>20508</th>
 <td>102761</td>
 <td>1980</td>
-<td>739.858</td>
-<td>0.371615</td>
-<td>73986.0</td>
-<td>546034.24606</td>
-<td>0.999997</td>
-<td>0.738026</td>
-<td>0.738024</td>
+<td>739.86</td>
+<td>0.37</td>
+<td>73986.00</td>
+<td>546034.25</td>
+<td>1.00</td>
+<td>0.74</td>
+<td>0.74</td>
 </tr>
 <tr>
 <th>20690</th>
 <td>102784</td>
 <td>1980</td>
-<td>86.767</td>
-<td>0.413491</td>
-<td>8677.0</td>
-<td>82975.89725</td>
-<td>0.999965</td>
-<td>0.956307</td>
-<td>0.956274</td>
+<td>86.77</td>
+<td>0.41</td>
+<td>8677.00</td>
+<td>82975.90</td>
+<td>1.00</td>
+<td>0.96</td>
+<td>0.96</td>
 </tr>
 <tr>
 <th>441</th>
 <td>100056</td>
 <td>1980</td>
-<td>30.222</td>
-<td>0.374836</td>
-<td>3022.0</td>
-<td>21158.88875</td>
-<td>1.000066</td>
-<td>0.700115</td>
-<td>0.700162</td>
+<td>30.22</td>
+<td>0.37</td>
+<td>3022.00</td>
+<td>21158.89</td>
+<td>1.00</td>
+<td>0.70</td>
+<td>0.70</td>
 </tr>
 <tr>
 <th>13438</th>
 <td>101740</td>
 <td>1980</td>
-<td>33.513</td>
-<td>0.515085</td>
-<td>3351.0</td>
-<td>27170.69425</td>
-<td>1.000090</td>
-<td>0.810751</td>
-<td>0.810823</td>
+<td>33.51</td>
+<td>0.52</td>
+<td>3351.00</td>
+<td>27170.69</td>
+<td>1.00</td>
+<td>0.81</td>
+<td>0.81</td>
 </tr>
 <tr>
 <th>1399</th>
 <td>100196</td>
 <td>1980</td>
-<td>89.357</td>
-<td>0.350494</td>
-<td>8934.0</td>
-<td>24904.42800</td>
-<td>1.000190</td>
-<td>0.278707</td>
-<td>0.278760</td>
+<td>89.36</td>
+<td>0.35</td>
+<td>8934.00</td>
+<td>24904.43</td>
+<td>1.00</td>
+<td>0.28</td>
+<td>0.28</td>
 </tr>
 </tbody>
 </table>
@@ -9801,7 +9870,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">df_combo</span> <span class="o">=</span> <span class="n">df_combo</span><span class="p">[</span>
@@ -9819,7 +9888,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -10097,414 +10166,16 @@ Name: count, dtype: int64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">df_combo</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"year"</span><span class="p">)[[</span><span class="s2">"crsp_tna"</span><span class="p">,</span> <span class="s2">"yret"</span><span class="p">]]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">"mean"</span><span class="p">,</span> <span class="s2">"median"</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">df_complete</span> <span class="o">=</span> <span class="n">df_combo</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"year"</span><span class="p">)[[</span><span class="s2">"crsp_tna"</span><span class="p">,</span> <span class="s2">"yret"</span><span class="p">]]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">"mean"</span><span class="p">,</span> <span class="s2">"median"</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr>
-<th></th>
-<th>year</th>
-<th colspan="2" halign="left">crsp_tna</th>
-<th colspan="2" halign="left">yret</th>
-</tr>
-<tr>
-<th></th>
-<th></th>
-<th>mean</th>
-<th>median</th>
-<th>mean</th>
-<th>median</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>1980</td>
-<td>135.38</td>
-<td>53.50</td>
-<td>0.36</td>
-<td>0.36</td>
-</tr>
-<tr>
-<th>1</th>
-<td>1981</td>
-<td>154.00</td>
-<td>55.03</td>
-<td>-0.04</td>
-<td>-0.04</td>
-</tr>
-<tr>
-<th>2</th>
-<td>1982</td>
-<td>169.27</td>
-<td>67.98</td>
-<td>0.24</td>
-<td>0.25</td>
-</tr>
-<tr>
-<th>3</th>
-<td>1983</td>
-<td>228.68</td>
-<td>84.00</td>
-<td>0.18</td>
-<td>0.18</td>
-</tr>
-<tr>
-<th>4</th>
-<td>1984</td>
-<td>225.05</td>
-<td>79.50</td>
-<td>-0.04</td>
-<td>-0.04</td>
-</tr>
-<tr>
-<th>5</th>
-<td>1985</td>
-<td>201.82</td>
-<td>91.90</td>
-<td>0.27</td>
-<td>0.27</td>
-</tr>
-<tr>
-<th>6</th>
-<td>1986</td>
-<td>228.07</td>
-<td>83.51</td>
-<td>0.12</td>
-<td>0.13</td>
-</tr>
-<tr>
-<th>7</th>
-<td>1987</td>
-<td>222.74</td>
-<td>66.28</td>
-<td>0.00</td>
-<td>0.01</td>
-</tr>
-<tr>
-<th>8</th>
-<td>1988</td>
-<td>223.77</td>
-<td>64.01</td>
-<td>0.14</td>
-<td>0.14</td>
-</tr>
-<tr>
-<th>9</th>
-<td>1989</td>
-<td>259.74</td>
-<td>71.32</td>
-<td>0.25</td>
-<td>0.26</td>
-</tr>
-<tr>
-<th>10</th>
-<td>1990</td>
-<td>362.16</td>
-<td>106.15</td>
-<td>-0.04</td>
-<td>-0.03</td>
-</tr>
-<tr>
-<th>11</th>
-<td>1991</td>
-<td>416.54</td>
-<td>114.86</td>
-<td>0.34</td>
-<td>0.31</td>
-</tr>
-<tr>
-<th>12</th>
-<td>1992</td>
-<td>361.51</td>
-<td>111.59</td>
-<td>0.07</td>
-<td>0.07</td>
-</tr>
-<tr>
-<th>13</th>
-<td>1993</td>
-<td>429.68</td>
-<td>113.84</td>
-<td>0.11</td>
-<td>0.10</td>
-</tr>
-<tr>
-<th>14</th>
-<td>1994</td>
-<td>417.67</td>
-<td>104.85</td>
-<td>-0.01</td>
-<td>-0.01</td>
-</tr>
-<tr>
-<th>15</th>
-<td>1995</td>
-<td>661.12</td>
-<td>146.66</td>
-<td>0.29</td>
-<td>0.31</td>
-</tr>
-<tr>
-<th>16</th>
-<td>1996</td>
-<td>882.71</td>
-<td>170.90</td>
-<td>0.18</td>
-<td>0.19</td>
-</tr>
-<tr>
-<th>17</th>
-<td>1997</td>
-<td>1063.56</td>
-<td>183.65</td>
-<td>0.21</td>
-<td>0.24</td>
-</tr>
-<tr>
-<th>18</th>
-<td>1998</td>
-<td>1223.19</td>
-<td>171.00</td>
-<td>0.13</td>
-<td>0.13</td>
-</tr>
-<tr>
-<th>19</th>
-<td>1999</td>
-<td>1390.16</td>
-<td>179.75</td>
-<td>0.26</td>
-<td>0.18</td>
-</tr>
-<tr>
-<th>20</th>
-<td>2000</td>
-<td>1317.95</td>
-<td>204.40</td>
-<td>0.01</td>
-<td>-0.02</td>
-</tr>
-<tr>
-<th>21</th>
-<td>2001</td>
-<td>1034.07</td>
-<td>156.35</td>
-<td>-0.10</td>
-<td>-0.11</td>
-</tr>
-<tr>
-<th>22</th>
-<td>2002</td>
-<td>723.14</td>
-<td>124.40</td>
-<td>-0.21</td>
-<td>-0.22</td>
-</tr>
-<tr>
-<th>23</th>
-<td>2003</td>
-<td>1009.79</td>
-<td>168.10</td>
-<td>0.34</td>
-<td>0.31</td>
-</tr>
-<tr>
-<th>24</th>
-<td>2004</td>
-<td>1137.75</td>
-<td>200.10</td>
-<td>0.13</td>
-<td>0.12</td>
-</tr>
-<tr>
-<th>25</th>
-<td>2005</td>
-<td>1266.91</td>
-<td>228.30</td>
-<td>0.08</td>
-<td>0.07</td>
-</tr>
-<tr>
-<th>26</th>
-<td>2006</td>
-<td>1478.86</td>
-<td>257.70</td>
-<td>0.15</td>
-<td>0.13</td>
-</tr>
-<tr>
-<th>27</th>
-<td>2007</td>
-<td>1248.73</td>
-<td>210.30</td>
-<td>0.06</td>
-<td>0.05</td>
-</tr>
-<tr>
-<th>28</th>
-<td>2008</td>
-<td>782.02</td>
-<td>124.90</td>
-<td>-0.38</td>
-<td>-0.38</td>
-</tr>
-<tr>
-<th>29</th>
-<td>2009</td>
-<td>1120.28</td>
-<td>190.35</td>
-<td>0.32</td>
-<td>0.30</td>
-</tr>
-<tr>
-<th>30</th>
-<td>2010</td>
-<td>1469.46</td>
-<td>256.40</td>
-<td>0.19</td>
-<td>0.17</td>
-</tr>
-<tr>
-<th>31</th>
-<td>2011</td>
-<td>1363.40</td>
-<td>217.70</td>
-<td>-0.03</td>
-<td>-0.02</td>
-</tr>
-<tr>
-<th>32</th>
-<td>2012</td>
-<td>1567.57</td>
-<td>243.70</td>
-<td>0.14</td>
-<td>0.15</td>
-</tr>
-<tr>
-<th>33</th>
-<td>2013</td>
-<td>1998.51</td>
-<td>344.90</td>
-<td>0.32</td>
-<td>0.33</td>
-</tr>
-<tr>
-<th>34</th>
-<td>2014</td>
-<td>2239.81</td>
-<td>349.05</td>
-<td>0.08</td>
-<td>0.08</td>
-</tr>
-<tr>
-<th>35</th>
-<td>2015</td>
-<td>2097.29</td>
-<td>290.05</td>
-<td>-0.02</td>
-<td>-0.02</td>
-</tr>
-<tr>
-<th>36</th>
-<td>2016</td>
-<td>2341.01</td>
-<td>287.25</td>
-<td>0.12</td>
-<td>0.11</td>
-</tr>
-<tr>
-<th>37</th>
-<td>2017</td>
-<td>2293.50</td>
-<td>283.70</td>
-<td>0.18</td>
-<td>0.18</td>
-</tr>
-<tr>
-<th>38</th>
-<td>2018</td>
-<td>2189.51</td>
-<td>247.45</td>
-<td>-0.08</td>
-<td>-0.08</td>
-</tr>
-<tr>
-<th>39</th>
-<td>2019</td>
-<td>2691.27</td>
-<td>299.50</td>
-<td>0.26</td>
-<td>0.26</td>
-</tr>
-<tr>
-<th>40</th>
-<td>2020</td>
-<td>2871.09</td>
-<td>344.10</td>
-<td>0.17</td>
-<td>0.14</td>
-</tr>
-<tr>
-<th>41</th>
-<td>2021</td>
-<td>3439.36</td>
-<td>399.20</td>
-<td>0.21</td>
-<td>0.22</td>
-</tr>
-<tr>
-<th>42</th>
-<td>2022</td>
-<td>2920.07</td>
-<td>341.25</td>
-<td>-0.17</td>
-<td>-0.17</td>
-</tr>
-<tr>
-<th>43</th>
-<td>2023</td>
-<td>3727.34</td>
-<td>428.20</td>
-<td>0.19</td>
-<td>0.17</td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
@@ -10514,10 +10185,19 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span>
+<div class="highlight hl-python"><pre><span></span><span class="n">df_complete</span> <span class="o">=</span> <span class="n">df_complete</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'crsp_tna'</span><span class="p">:</span> <span class="s1">'$crsp_</span><span class="si">{TNA}</span><span class="s1">$'</span><span class="p">})</span> 
+<span class="n">latexTS_df_complete</span> <span class="o">=</span> <span class="n">df_complete</span><span class="o">.</span><span class="n">to_latex</span><span class="p">(</span><span class="n">float_format</span> <span class="o">=</span> <span class="n">float_format_func</span><span class="p">)</span>
+
+
+<span class="n">path_to_save</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'../output/table1_complete.tex'</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_save</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> 
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">latexTS_df_complete</span><span class="p">)</span>
+    
+<span class="n">df_complete</span> <span class="o">=</span> <span class="n">df_complete</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'$crsp_</span><span class="si">{TNA}</span><span class="s1">$'</span><span class="p">:</span> <span class="s1">'crsp_tna'</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>

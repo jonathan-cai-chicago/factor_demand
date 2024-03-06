@@ -144,6 +144,23 @@ df_crsp_clean = pd.merge(df_tna, df_ret)[['wficn', 'year', 'crsp_tna', 'yret']]
 df_crsp_clean.head()
 
 
+# In[ ]:
+
+
+pd.set_option('display.float_format', lambda x: '%.2f' % x)
+float_format_func = lambda x: '{:.2f}'.format(x)
+df_crsp_clean = df_crsp_clean.rename(columns={'crsp_tna': '$crsp_{TNA}$'}) 
+latexTS_crsp_clean = df_crsp_clean.head(5).to_latex(float_format = float_format_func)
+
+path_to_save = f'../output/table_crsp_clean.tex'
+
+with open(path_to_save, 'w') as f: 
+    f.write(latexTS_crsp_clean)
+    
+df_crsp_clean = df_crsp_clean.rename(columns={'$crsp_{TNA}$': 'crsp_tna'}) 
+
+
+
 # # S12 Data
 # - The S12 database link: https://wrds-www.wharton.upenn.edu/data-dictionary/tr_mutualfunds/s12/
 # 
@@ -240,6 +257,23 @@ df_eq.head()
 df_eq = df_eq.groupby(['wficn', 'year'])[['assets', 'useq_tna_k']].last().reset_index()
 
 
+# In[ ]:
+
+
+df_eq = df_eq.rename(columns={'useq_tna_k': '$useq_{TNA}$'}) 
+
+latexTS_df_eq = df_eq.head(5).to_latex(float_format = float_format_func)
+
+path_to_save = f'../output/table1b.tex'
+
+with open(path_to_save, 'w') as f: 
+    f.write(latexTS_df_eq)
+
+df_eq = df_eq.rename(columns={'$useq_{TNA}$': 'useq_tna_k'}) 
+
+    
+
+
 # # Merging CRSP and S12 Data
 # - It is finally time to merge. 
 
@@ -260,6 +294,14 @@ df_crsp_clean.head()
 
 df_combo = pd.merge(df_crsp_clean, df_eq, on=["wficn", "year"], how="inner").sort_values("year")
 df_combo.head()
+
+
+# In[ ]:
+
+
+OUTPUT_DIR = Path(config.OUTPUT_DIR)
+path = Path(OUTPUT_DIR) / "main_sample.parquet" 
+df_combo.to_parquet(path)
 
 
 # # Applying Filters To Identify Universe
@@ -331,11 +373,20 @@ df_combo.groupby("year").size().reset_index().rename(columns={0: "count"})
 # In[ ]:
 
 
-df_combo.groupby("year")[["crsp_tna", "yret"]].agg(["mean", "median"]).reset_index().round(2)
+df_complete = df_combo.groupby("year")[["crsp_tna", "yret"]].agg(["mean", "median"]).reset_index().round(2)
 
 
 # In[ ]:
 
 
+df_complete = df_complete.rename(columns={'crsp_tna': '$crsp_{TNA}$'}) 
+latexTS_df_complete = df_complete.to_latex(float_format = float_format_func)
 
+
+path_to_save = f'../output/table1_complete.tex'
+
+with open(path_to_save, 'w') as f: 
+    f.write(latexTS_df_complete)
+    
+df_complete = df_complete.rename(columns={'$crsp_{TNA}$': 'crsp_tna'}) 
 

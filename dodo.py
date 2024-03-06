@@ -112,10 +112,10 @@ def task_convert_notebooks_to_scripts():
     build_dir = Path(OUTPUT_DIR)
     build_dir.mkdir(parents=True, exist_ok=True)
 
-    notebooks = [
-        "01_example_notebook.ipynb",
+    notebooks = [ 
         "02_raw_data_walkthrough.ipynb",
         "bonus_charts_and_tables_walkthrough.ipynb",
+        "03_fama_french.ipynb",
     ]
     file_dep = [Path("./src") / file for file in notebooks]
     stems = [notebook.split(".")[0] for notebook in notebooks]
@@ -140,10 +140,13 @@ def task_run_notebooks():
     """Preps the notebooks for presentation format.
     Execute notebooks with summary stats and plots and remove metadata.
     """
-    notebooks = [
-        "01_example_notebook.ipynb",
+    notebooks = [ 
         "02_raw_data_walkthrough.ipynb",
+<<<<<<< HEAD
         "bonus_charts_and_tables_walkthrough.ipynb",
+=======
+        "03_fama_french.ipynb",
+>>>>>>> adam-branch
     ]
     stems = [notebook.split(".")[0] for notebook in notebooks]
 
@@ -152,9 +155,7 @@ def task_run_notebooks():
         *[Path(OUTPUT_DIR) / f"_{stem}.py" for stem in stems],
     ]
 
-    targets = [
-        ## 01_example_notebook.ipynb output
-        OUTPUT_DIR / "sine_graph.png",
+    targets = [ 
         ## Notebooks converted to HTML
         *[OUTPUT_DIR / f"{stem}.html" for stem in stems],
     ]
@@ -173,3 +174,28 @@ def task_run_notebooks():
         "clean": True,
     }
 
+
+def task_compile_latex_docs():
+
+    file_dep = [
+        "./reports/project_writeup.tex", 
+        "./output/_02_raw_data_walkthrough.py",  
+        "./output/_03_fama_french.py",
+    ]
+    file_output = [
+        "./output/project_writeup.pdf", 
+    ]
+    
+    targets = [file for file in file_output]
+
+    return {
+        "actions": [
+            "latexmk -xelatex -cd -outdir=../output ./reports/project_writeup.tex",  # Compile
+            "latexmk -xelatex -c -cd -outdir=../output ./reports/project_writeup.tex",  # Clean 
+        ],
+        "targets": targets,
+        "file_dep": file_dep,
+        "clean": True,
+    }
+
+ 

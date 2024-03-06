@@ -23,10 +23,17 @@ Replication for Factor Demand
 - Attempt to replicate table 1 of the paper by applying all filters mentioned in the paper. 
 - Write Jupyter notebooks to explain the raw data and replication attempts.
 
+<<<<<<< HEAD
 ## Jean-Sebastien Gaultier
 - work on the analysis of the returns
 - build histograms to compare the different fund returns
 - try to add to the Table 1 returns columns.
+=======
+## Adam Aldad
+- Created code to convert the tables to LaTeX 
+- Wrote the project write-up 
+- Edited the dodo.py file to ensure the tables and write-up PDF document are compiled automatically 
+>>>>>>> adam-branch
 
 
 # Quick Start
