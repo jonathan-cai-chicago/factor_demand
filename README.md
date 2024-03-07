@@ -27,10 +27,17 @@ Replication for Factor Demand
 - work on the analysis of the returns
 - build histograms to compare the different fund returns
 - try to add to the Table 1 returns columns.
+
 ## Adam Aldad
 - Created code to convert the tables to LaTeX 
 - Wrote the project write-up 
 - Edited the dodo.py file to ensure the tables and write-up PDF document are compiled automatically 
+
+## Keyi Chen
+- Design SQL queries to query index_fund_flag from crsp.fund_hdr
+- Pulled factor returns data from Kenneth R. French's website
+- Replicated three panels of Table 2
+- Wrote Jupyter notebooks to walk through the steps of replication Table 2
 
 
 # Quick Start
